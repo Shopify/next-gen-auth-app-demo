@@ -32,5 +32,7 @@ SHOPIFY_API_SECRET=<your Shopify API secret>
 
 7. Enable the beta `app_session_token` on your app using Services Internal
 
+8. Run `rails generate graphql:install`
+
 [//]: # "Links"
 [1]: https://development.shopify.io/engineering/developing_at_Shopify/apps/first-party_apps/create_and_install_an_app_locally#Register_your_app_with_a_Shopify_Partners_account

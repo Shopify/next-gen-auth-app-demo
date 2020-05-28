@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   include ShopifyApp::RequireKnownShop
 
   def index
+    byebug
     @shop_origin = current_shopify_domain
   end
 end

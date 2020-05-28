@@ -1,1 +1,10 @@
-<div id="app" data-api-key=<%= ShopifyApp.configuration.api_key %> data-shop-origin=<%= @shop_origin %> </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@4.22.0/styles.min.css"/>
+</head>
+<body>
+  <div id="app" data-api-key=<%= ShopifyApp.configuration.api_key %> data-shop-origin=<%= @shop_origin %> </div>
+  <%= react_component("App") %>
+</body>
+</html>

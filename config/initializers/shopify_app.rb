@@ -10,7 +10,7 @@ ShopifyApp.configure do |config|
   config.api_version = "2020-04"
   config.shop_session_repository = 'Shop'
 
-  # config.allow_jwt_authentication = true
+  config.allow_jwt_authentication = true
   config.myshopify_domain = 'myshopify.com'
 end
 
