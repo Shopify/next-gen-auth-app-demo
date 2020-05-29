@@ -6,4 +6,4 @@ class HelloWorld extends React.Component {
     )
   }
 }
-export default HelloWorld 
+export default HelloWorld

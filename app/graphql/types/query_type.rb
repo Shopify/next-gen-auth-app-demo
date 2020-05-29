@@ -7,7 +7,7 @@ module Types
     field :test_field, String, null: false,
       description: "An example field added by the generator"
     def test_field
-      "Hello World!"
+      "Congratulations! Your requests are now authorized using Next-Gen Auth."
     end
   end
 end

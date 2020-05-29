@@ -1,4 +1,4 @@
-//document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 //  var data = document.getElementById('shopify-app-init').dataset;
 //  var AppBridge = window['app-bridge'];
 //  var createApp = AppBridge.default;
@@ -12,4 +12,4 @@
 //  TitleBar.create(app, {
 //    title: data.page,
 //  });
-//});
+// });
