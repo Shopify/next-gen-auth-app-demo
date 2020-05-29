@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/shopify/shopify_app
+  revision: 58cb03fd00d0f560deb101d88282bc0066aa8f53
+  specs:
+    shopify_app (13.2.0)
+      browser_sniffer (~> 1.2.2)
+      jwt (~> 2.2.1)
+      omniauth-shopify-oauth2 (~> 2.2.2)
+      rails (> 5.2.1)
+      redirect_safely (~> 1.0)
+      shopify_api (~> 9.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,9 +54,17 @@ GEM
       globalid (>= 0.3.6)
     activemodel (6.0.3.1)
       activesupport (= 6.0.3.1)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (6.0.3.1)
       activemodel (= 6.0.3.1)
       activesupport (= 6.0.3.1)
+    activeresource (5.1.1)
+      activemodel (>= 5.0, < 7)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (>= 5.0, < 7)
     activestorage (6.0.3.1)
       actionpack (= 6.0.3.1)
       activejob (= 6.0.3.1)
@@ -58,9 +78,14 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
+    browser_sniffer (1.2.2)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.32.2)
@@ -73,15 +98,32 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.6)
+    connection_pool (2.2.2)
     crass (1.0.6)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.9.0)
+    execjs (2.7.0)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
+    graphql (1.10.10)
+    graphql-client (0.16.0)
+      activesupport (>= 3.0)
+      graphql (~> 1.8)
+    hashie (4.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    jwt (2.2.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -98,9 +140,27 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     msgpack (1.3.3)
+    multi_json (1.14.1)
+    multi_xml (0.6.0)
+    multipart-post (2.1.1)
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    oauth2 (1.4.4)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-oauth2 (1.5.0)
+      oauth2 (~> 1.1)
+      omniauth (~> 1.2)
+    omniauth-shopify-oauth2 (2.2.2)
+      activesupport
+      omniauth-oauth2 (~> 1.5.0)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
@@ -139,6 +199,14 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    react-rails (2.6.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
+    redirect_safely (1.0.0)
+      activemodel
     regexp_parser (1.7.0)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -154,6 +222,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shopify_api (9.1.0)
+      activeresource (>= 4.1.0, < 6.0.0)
+      graphql-client
+      rack
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -201,12 +273,17 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  dotenv-rails
+  graphiql-rails
+  graphql
   jbuilder (~> 2.7)
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
+  react-rails
   sass-rails (>= 6)
   selenium-webdriver
+  shopify_app!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
@@ -220,4 +297,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
