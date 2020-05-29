@@ -4,7 +4,7 @@ import { HttpLink } from "apollo-link-http";
 import ApolloClient from "apollo-client";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { createApp } from "@shopify/app-bridge";
-import authenticatedFetch from "@shopify/app-bridge-utils";
+import { authenticatedFetch, getSessionToken } from "@shopify/app-bridge-utils";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
@@ -54,6 +54,7 @@ export default function App() {
           >
             <Query query={TEST_QUERY}>
               {({ loading, error, data }) => {
+                console.log(loading, error, data);
                 if (loading) return <div> Fetching.. </div>;
                 if (error) return <div> Error! </div>;
                 return <div> {data.testField} </div>;
