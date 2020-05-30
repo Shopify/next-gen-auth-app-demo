@@ -19,5 +19,6 @@ plugins:
 rules: {
   "sort-imports": ["error", {
     "ignoreCase": true,
-  }]
+  }],
+"semi": [2, "always"]
 }
