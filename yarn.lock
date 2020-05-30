@@ -1026,29 +1026,22 @@
   dependencies:
     tslib "^1.9.3"
 
-"@shopify/app-bridge-react@^1.22.0-alpha.1":
-  version "1.22.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@shopify/app-bridge-react/-/app-bridge-react-1.22.0-alpha.1.tgz#aea73ddae7b53df3941bdf41860144d4e1e6547f"
-  integrity sha512-kwMqbbA8vsxG+Ry+RmfenoCzP5vuDWq2aglGCIY+zjPeTEc6NI6MkbFz0Tby0NwqCZATdx3I/j6WbGkPqidsOw==
+"@shopify/app-bridge-utils@^1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@shopify/app-bridge-utils/-/app-bridge-utils-1.22.0.tgz#8e4c2bb2c26a04cae0a3f61ec7f8c6592f2762b6"
+  integrity sha512-XY5petRpGKQ2dS9i9ACVEt9BTzYwbvHN4Q03sRUAxOpkCJ7KWOT/u215/auqC/EdXact8U4zNfGbbTiiwpKsbA==
   dependencies:
-    "@shopify/app-bridge" "^1.22.0-alpha.1"
+    "@shopify/app-bridge" "^1.22.0"
 
-"@shopify/app-bridge-utils@^1.22.0-alpha.1":
-  version "1.22.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@shopify/app-bridge-utils/-/app-bridge-utils-1.22.0-alpha.1.tgz#1c1deaf0b7b4e6a00364ab8d0c261c74d0fee8eb"
-  integrity sha512-GzSAt3apqbnftmwHC6Vy3Y/skwxzOuLEWSHX8JqoiFPSZnqi8+Z2IUW22akeoNE0iuuVWAYvddB8MNKb9MUFAQ==
-  dependencies:
-    "@shopify/app-bridge" "^1.22.0-alpha.1"
+"@shopify/app-bridge@^1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-1.22.0.tgz#895b3463201583bb926cc786961fa7639cb9bed6"
+  integrity sha512-uLwbWtgFrgYB/mk69Otg1TX9gcKl2LLynW1B5Q0tAMHA/KYsnyN1IMEg5ZHdfUohsMMiTWCEd4wq6OzGvnTOxQ==
 
-"@shopify/app-bridge@^1.21.4", "@shopify/app-bridge@^1.3.0":
+"@shopify/app-bridge@^1.3.0":
   version "1.21.6"
   resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-1.21.6.tgz#025a04d67e7865f26bee098f00d9f432c1e1f1bc"
   integrity sha512-PeLvCiNJx5GYgM9Z19U0FOx+oEjywPJ60a4z+gZtTZh3lSiCNUwQOg/bHz8bY7bNCbhJA0qt+8OYL/y/ADUcGg==
-
-"@shopify/app-bridge@^1.22.0-alpha.1":
-  version "1.22.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-1.22.0-alpha.1.tgz#0205293f51a869e01dccb59fd0cda93f75cc4a21"
-  integrity sha512-eOr/Alh4uoZM71aauWEUaCx+dGOUwhdaVoLonTa8MSjRrbnR5VpIoz4bF+OSatngXgxehdAySH+5RQvyY0ByYg==
 
 "@shopify/javascript-utilities@^2.4.1":
   version "2.4.1"
