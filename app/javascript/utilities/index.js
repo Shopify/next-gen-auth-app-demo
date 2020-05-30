@@ -1,7 +1,7 @@
-import { AppConfig } from "@shopify/app-bridge";
+import { AppConfig } from '@shopify/app-bridge';
 
-export function getRootElement() {
-  const rootElement = document.getElementById("app");
+export function getRootElement () {
+  const rootElement = document.getElementById('app');
   if (!rootElement) {
     return null;
   }
@@ -9,7 +9,7 @@ export function getRootElement() {
   return rootElement;
 }
 
-export function getShopOrigin() {
+export function getShopOrigin () {
   const rootElement = getRootElement();
   if (!rootElement) {
     return null;
@@ -23,7 +23,7 @@ export function getShopOrigin() {
   return shopOrigin;
 }
 
-export function getEmbeddedAppProps() {
+export function getEmbeddedAppProps () {
   const rootElement = getRootElement();
 
   if (!rootElement) {
@@ -37,18 +37,18 @@ export function getEmbeddedAppProps() {
     const message = [];
 
     if (!apiKey) {
-      message.push("apiKey is null");
+      message.push('apiKey is null');
     }
 
     if (!shopOrigin) {
-      message.push("shopOrigin is null");
+      message.push('shopOrigin is null');
     }
 
-    throw new Error(message.join(", "));
+    throw new Error(message.join(', '));
   }
 
   return {
     apiKey,
-    shopOrigin,
+    shopOrigin
   };
 }
