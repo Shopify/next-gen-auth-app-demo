@@ -2,9 +2,7 @@ import { AppProvider, EmptyState, Page } from '@shopify/polaris';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { authenticatedFetch } from '@shopify/app-bridge-utils';
-import { createApp } from '@shopify/app-bridge';
 import enTranslations from '@shopify/polaris/locales/en.json';
-import { getEmbeddedAppProps } from '../utilities/';
 import { gql } from 'apollo-boost';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -13,20 +11,10 @@ import React from 'react';
 
 class App extends React.Component {
   render () {
-    const embeddedAppProps = getEmbeddedAppProps();
-    const apiKey = getEmbeddedAppProps && embeddedAppProps.apiKey;
-    const shopOrigin = getEmbeddedAppProps && embeddedAppProps.shopOrigin;
-
-    const app = createApp({
-      apiKey: apiKey,
-      shopOrigin: shopOrigin,
-      forceRedirect: true
-    });
-
     const client = new ApolloClient({
       link: new HttpLink({
         credentials: 'same-origin',
-        fetch: authenticatedFetch(app),
+        fetch: authenticatedFetch(window.app), // created in shopify_app.js
         uri: '/graphql'
       }),
       cache: new InMemoryCache()
