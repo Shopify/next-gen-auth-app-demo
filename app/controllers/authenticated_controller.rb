@@ -3,7 +3,7 @@
 class AuthenticatedController < ApplicationController
   include ShopifyApp::Authenticated
 
-  skip_before_action :verify_authenticity_token
+  protect_from_forgery with: :exception, unless: :valid_jwt_header?
 
   private
 

@@ -8,4 +8,3 @@ class HomeController < ApplicationController
     @shop_origin = current_shopify_domain
   end
 end
-

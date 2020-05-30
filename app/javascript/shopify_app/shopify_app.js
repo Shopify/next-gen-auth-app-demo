@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   var data = document.getElementById('shopify-app-init').dataset;
-  console.log(data);
   var AppBridge = window['app-bridge'];
   var createApp = AppBridge.default;
   window.app = createApp({
