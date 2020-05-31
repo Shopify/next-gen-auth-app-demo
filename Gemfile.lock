@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/shopify/shopify_app
-  revision: 58cb03fd00d0f560deb101d88282bc0066aa8f53
+  revision: 24b32b143d0be28ec37520e03ab183518987e593
   specs:
     shopify_app (13.2.0)
       browser_sniffer (~> 1.2.2)
@@ -297,4 +297,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.17.3
+   1.17.2

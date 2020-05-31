@@ -53,9 +53,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Our additional gems
+# Additional gems added
 gem 'shopify_app', git: 'https://github.com/shopify/shopify_app'
-gem 'graphql'
 gem 'react-rails'
-gem 'graphiql-rails', group: :development
 gem 'dotenv-rails'
+gem 'graphql'
+
+gem 'graphiql-rails', group: :development
