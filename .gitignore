@@ -42,3 +42,7 @@ yarn-debug.log*
 
 vendor
 .env
+
+.generators
+.idea/
+.rakeTasks
