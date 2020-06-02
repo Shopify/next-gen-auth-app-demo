@@ -65,7 +65,7 @@ $ rails new <your-app-name> --webpack=react
 #### Add dependencies
 
 1. To ensure that your app is using the latest Shopify App revision (at least
-release [v13.2.0][6]), add the following gems to the Gemfile found in
+release [v13.3.0][6]), add the following gems to the Gemfile found in
 `<your-app-name>`'s directory:
 
 ```rb
@@ -213,7 +213,7 @@ This section assumes that your app meets the following prerequisites:
 
 * Your app has the Next-Gen Auth beta feature enabled on Shopify
 * Your app is configured to allow JWT-based authentication
-* Your `shopify_app` gem is updated to at least [`v13.2.0`][6]
+* Your `shopify_app` gem is updated to at least [`v13.3.0`][6]
 * Your `app-bridge-utils` npm library is updated to at least [`v1.22.0`][10]
   - You can ensure this by running `yarn add @shopify/app-bridge-utils@1.22.0` in the root directory of your project
 
@@ -467,7 +467,7 @@ your app makes to ensure that among the Request Headers, there is a valid
 [3]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-react/embed-your-app-in-shopify#expose-your-dev-environment
 [4]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-react
 [5]: https://github.com/reactjs/react-rails#get-started-with-webpacker
-[6]: https://github.com/Shopify/shopify_app/releases/tag/v13.2.0
+[6]: https://github.com/Shopify/shopify_app/releases/tag/v13.3.0
 [7]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-2-create-and-configure-your-app-in-the-partner-dashboard
 [8]: https://polaris.shopify.com/
 [9]: https://www.apollographql.com/docs/react/
