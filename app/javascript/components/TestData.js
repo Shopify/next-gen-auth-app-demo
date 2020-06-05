@@ -1,23 +1,38 @@
-import {gql} from "apollo-boost";
+import AxiosClient from '../utilities/AxiosClient';
 import React from "react";
-import {useQuery} from "@apollo/react-hooks";
 
-const TEST_QUERY = gql`query { testField }`;
+export default class TestData extends React.Component {
+  state = {
+    isLoading: true,
+    data: null,
+    error: null
+  }
 
-export default function TestData() {
-    const {loading, error, data} = useQuery(TEST_QUERY);
+  fetchData() {
+    const TEST_QUERY = `query { testField }`;
 
-    if (loading) {
-        return (
-            <div>'Loading'</div>
-        );
-    } else if (error) {
-        return (
-            <div>'Something went wrong!'</div>
-        );
-    } else {
-        return (
-            <p>{data.testField}</p>
-        );
-    }
+    AxiosClient.post('/graphql', { query: TEST_QUERY })
+      .then((result) => {
+      this.setState({
+        data: result.data.data.testField,
+        isLoading: false
+      });
+    }).catch((error) => {
+      this.setState({ error, isLoading: false });
+    });
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  render () {
+    const { isLoading, data, error } = this.state;
+    return (
+      <React.Fragment>
+        {error ? <p>{error.message}</p> : null}
+        {!isLoading ? <p>{data}</p> : <p>Loading...</p>}
+      </React.Fragment>
+    );
+  }
 }
