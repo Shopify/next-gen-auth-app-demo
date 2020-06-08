@@ -4,10 +4,9 @@ A basic Rails/React demo app created to showcase [Shopify's Next-Gen Auth][1].
 
 ## Getting started
 
-> **Important:** This guide assumes your app has the Next-Gen Auth beta feature
-enabled. This provides your app early access to use JWT based authorization.
-Reach out to someone on the App Authorization team if you are unsure whether
-your app has this enabled.
+> **Important:** The session token feature is currently restricted to
+  participants of a private beta. The feature is scheduled for general release
+  in Summer 2020.
 
 If you are looking to install this app on your own testing environment, and
 already have a `Shopify API Key` and `Shopify API Secret` from your partners
@@ -16,6 +15,7 @@ dashboard, you can pull this repository and run the following:
 ```console
 $ bundle install
 $ yarn install
+$ rails db:migrate
 ```
 
 See the next section for a guide on setting up your `.env` file.
@@ -146,23 +146,24 @@ Before you can install your app on your store, there are a few changes required.
 `ShopifyApp.configure` block:
 
 ```rb
-config.allow_jwt_authentication = true
-config.myshopify_domain = ENV['SHOPIFY_DOMAIN']
+ShopifyApp.configure do |config|
+  …
+  config.allow_jwt_authentication = true
+  config.myshopify_domain = ENV['SHOPIFY_DOMAIN']
+end
+
 ShopifyAPI::Session.myshopify_domain = ENV['SHOPIFY_DOMAIN']
 ```
 
-* The first line ensures that your app is configured to allow JWT-based authentication
-* The second ensures that the install link for the app goes to the correct URL
-* The third ensures that the app sends requests to the environment you are working on
+* `config.allow_jwt_authentication = true` ensures that your app is configured to allow JWT-based
+  authentication
+* You should also edit `app/views/layouts/embedded_app.html.erb` so that it looks like this:
 
 2. In `config/initializers/omniauth.rb` add:
 
 ```rb
 strategy.options[:myshopify_domain] = ENV['SHOPIFY_DOMAIN']
 ```
-
-* This line makes sure that shops with the domain specified by
-`ENV['SHOPIFY_DOMAIN']` are considered valid
 
 3. You should be able to install your app to your Shopify store as normal.
 The [following guide][7] has instructions on how to do this.
@@ -464,7 +465,7 @@ your app makes to ensure that among the Request Headers, there is a valid
 [s2]: ./app/assets/images/screen-shot-2.png
 [1]: https://drive.google.com/open?id=1KuWZc10Hnp0vCfR8ulYHVlazjA1RfXx9iDHb2d5e6Hk
 [2]: https://development.shopify.io/engineering/developing_at_Shopify/apps/first-party_apps/create_and_install_an_app_locally#Register_your_app_with_a_Shopify_Partners_account
-[3]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-react/embed-your-app-in-shopify#expose-your-dev-environment
+[3]: https://www.shopify.in/partners/blog/shopify-admin-authenticate-app
 [4]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-react
 [5]: https://github.com/reactjs/react-rails#get-started-with-webpacker
 [6]: https://github.com/Shopify/shopify_app/releases/tag/v13.3.0
