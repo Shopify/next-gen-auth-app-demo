@@ -12,8 +12,9 @@ export default function TestData() {
             <div>'Loading'</div>
         );
     } else if (error) {
+        console.log(error)
         return (
-            <div>'Something went wrong!'</div>
+            <div>Something went wrong {error.message}</div>
         );
     } else {
         return (

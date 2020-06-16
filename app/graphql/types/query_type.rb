@@ -1,3 +1,5 @@
+require 'shopify_api'
+
 module Types
   class QueryType < Types::BaseObject
     # Add root-level fields here.
@@ -7,7 +9,19 @@ module Types
     field :test_field, String, null: false,
       description: "An example field added by the generator"
     def test_field
-      "Congratulations! Your requests are now authorized using Next-Gen Auth."
+      client = ShopifyAPI::GraphQL.client
+
+      shop_name_query = client.parse <<-'GRAPHQL'
+        {
+          shop {
+            name
+          }
+        }
+      GRAPHQL
+
+      result = client.query(shop_name_query)
+      shop = result.data.shop.name
+      "Congratulations! Your requests to #{shop} are now authorized using Next-Gen Auth."
     end
   end
 end
