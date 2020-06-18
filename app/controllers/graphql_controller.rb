@@ -13,7 +13,11 @@ class GraphqlController < AuthenticatedController
       # current_user: current_user,
     }
     result = NextGenAuthAppDemoSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
-    response.set_header('X-Shopify-Request-Auth-Code', 'true') if result.to_h["data"]["testField"]["errors"].present?
+    if result.to_h["data"]["testField"]["errors"].present?
+      response.set_header('X-Shopify-Request-Auth-Code', 'true')
+    else
+      response.set_header('X-Shopify-Request-Auth-Code', 'false')
+    end
     render json: result
   rescue => e
     raise e unless Rails.env.development?

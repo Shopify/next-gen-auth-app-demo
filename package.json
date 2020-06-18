@@ -8,7 +8,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "@shopify/app-bridge-utils": "1.24.0",
+    "@shopify/app-bridge-utils": "1.24.1.alpha.1",
     "@shopify/polaris": "^4.24.0",
     "apollo-boost": "^0.4.9",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
