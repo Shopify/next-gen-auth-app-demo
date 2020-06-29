@@ -14,9 +14,7 @@ class GraphqlController < AuthenticatedController
     }
     result = NextGenAuthAppDemoSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     if result.to_h["data"]["testField"]["errors"].present?
-      response.set_header('X-Shopify-Request-Auth-Code', 'true')
-    else
-      response.set_header('X-Shopify-Request-Auth-Code', 'false')
+      signal_access_token_required
     end
     render json: result
   rescue => e
