@@ -54,7 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Additional gems added
-gem 'shopify_app', path: '../shopify_app'
+gem 'shopify_app', '>= 13.5'
 gem 'react-rails'
 gem 'dotenv-rails'
 gem 'graphql'

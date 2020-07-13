@@ -13,7 +13,8 @@ class GraphqlController < AuthenticatedController
       # current_user: current_user,
     }
     result = NextGenAuthAppDemoSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
-    if result.to_h["data"]["testField"]["errors"].present?
+    if result.to_h['data']['testField']['errors'].present?
+      # Use the helper method available in the ShopifyApp::Authenticated concern
       signal_access_token_required
     end
     render json: result

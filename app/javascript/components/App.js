@@ -12,7 +12,7 @@ export default function App() {
   const client = new ApolloClient({
     link: new HttpLink({
       credentials: 'same-origin',
-      fetch: userAuthorizedFetch({appBridge: window.app, fetchOperation: authenticatedFetch(window.app)}),
+      fetch: userAuthorizedFetch({app: window.app, fetchOperation: authenticatedFetch(window.app)}),
       uri: '/graphql'
     }),
     cache: new InMemoryCache()
