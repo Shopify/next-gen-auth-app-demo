@@ -463,7 +463,7 @@ your app makes to ensure that among the Request Headers, there is a valid
 [//]: # "Links"
 [s1]: ./app/assets/images/screen-shot-1.png
 [s2]: ./app/assets/images/screen-shot-2.png
-[1]: https://drive.google.com/open?id=1KuWZc10Hnp0vCfR8ulYHVlazjA1RfXx9iDHb2d5e6Hk
+[1]: https://shopify.dev/tools/app-bridge/authentication
 [2]: https://development.shopify.io/engineering/developing_at_Shopify/apps/first-party_apps/create_and_install_an_app_locally#Register_your_app_with_a_Shopify_Partners_account
 [3]: https://www.shopify.in/partners/blog/shopify-admin-authenticate-app
 [4]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-react
