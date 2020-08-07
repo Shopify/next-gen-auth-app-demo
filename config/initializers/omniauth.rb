@@ -8,17 +8,21 @@ provider :shopify,
   scope: ShopifyApp.configuration.scope,
   setup: lambda { |env|
     strategy = env['omniauth.strategy']
-
+    request = Rack::Request.new(env)
     shopify_auth_params = strategy.session['shopify.omniauth_params']&.with_indifferent_access
-    shop = if shopify_auth_params.present?
-      "https://#{shopify_auth_params[:shop]}"
+    shop_host = request.params['shop'] || (shopify_auth_params && shopify_auth_params['shop'])
+    shop = if shop_host.present?
+      "https://#{shop_host}"
     else
       ''
     end
 
+    jwt = env['jwt.shopify_domain'] && env['jwt.shopify_user_id']
+
     strategy.options[:client_options][:site] = shop
     strategy.options[:old_client_secret] = ShopifyApp.configuration.old_secret
-    strategy.options[:per_user_permissions] = strategy.session[:user_tokens]
+    strategy.options[:per_user_permissions] = strategy.session[:user_tokens] || jwt
     strategy.options[:myshopify_domain] = ENV['SHOPIFY_DOMAIN']
+    strategy.options[:provider_ignores_state] = jwt
   }
 end

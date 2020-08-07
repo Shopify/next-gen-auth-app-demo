@@ -9,6 +9,7 @@ ShopifyApp.configure do |config|
   config.after_authenticate_job = false
   config.api_version = "2020-04"
   config.shop_session_repository = 'Shop'
+  config.user_session_repository = 'User'
 
   config.allow_jwt_authentication = true
   config.myshopify_domain = ENV['SHOPIFY_DOMAIN']
