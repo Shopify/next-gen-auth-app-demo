@@ -3,8 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'shopify_app', '~> 14.0.0'
+gem 'dotenv-rails'
+gem 'react-rails'
+gem 'graphql'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -52,11 +57,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# Additional gems added
-gem 'shopify_app', '~> 13.3.0'
-gem 'react-rails'
-gem 'dotenv-rails'
-gem 'graphql'
 
 gem 'graphiql-rails', group: :development
