@@ -13,6 +13,10 @@ class GraphqlController < AuthenticatedController
       # current_user: current_user,
     }
     result = AppBridgeAuthSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    if result.to_h['data']['testField']['errors'].present?
+      # Use the helper method available in the ShopifyApp::Authenticated concern
+      signal_access_token_required
+    end
     render json: result
   rescue => e
     raise e unless Rails.env.development?

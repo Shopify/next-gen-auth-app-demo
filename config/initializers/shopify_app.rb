@@ -9,6 +9,8 @@ ShopifyApp.configure do |config|
   config.after_authenticate_job = false
   config.api_version = "2020-07"
   config.shop_session_repository = 'Shop'
+   # TODO: document intent to fetch online access tokens
+  config.user_session_repository = 'User'
   config.allow_jwt_authentication = true
 end
 

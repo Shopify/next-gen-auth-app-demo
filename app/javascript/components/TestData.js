@@ -2,7 +2,11 @@ import { gql, useQuery } from '@apollo/client';
 
 import React from 'react';
 
-const TEST_QUERY = gql`query { testField }`;
+const TEST_QUERY = gql`query { testField {
+	testField
+	errors
+}
+}`;
 
 export default function TestData() {
   const {loading, error, data} = useQuery(TEST_QUERY);
@@ -13,11 +17,14 @@ export default function TestData() {
     );
   } else if (error) {
     return (
-      <div>Something went wrong!</div>
+      <div>Something went wrong! {error.message}</div>
     );
   } else {
     return (
-      <p>{data.testField}</p>
+      <div>
+       <p>{data.testField?.testField}</p>
+       <p>{data.testField?.errors}</p>
+      </div>
     );
   }
 }
