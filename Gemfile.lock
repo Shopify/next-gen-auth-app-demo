@@ -1,3 +1,14 @@
+PATH
+  remote: ../shopify_app
+  specs:
+    shopify_app (14.2.0)
+      browser_sniffer (~> 1.2.2)
+      jwt (~> 2.2.1)
+      omniauth-shopify-oauth2 (~> 2.2.2)
+      rails (> 5.2.1)
+      redirect_safely (~> 1.0)
+      shopify_api (~> 9.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -214,13 +225,6 @@ GEM
       activeresource (>= 4.1.0, < 6.0.0)
       graphql-client
       rack
-    shopify_app (14.0.0)
-      browser_sniffer (~> 1.2.2)
-      jwt (~> 2.2.1)
-      omniauth-shopify-oauth2 (~> 2.2.2)
-      rails (> 5.2.1)
-      redirect_safely (~> 1.0)
-      shopify_api (~> 9.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -278,7 +282,7 @@ DEPENDENCIES
   react-rails
   sass-rails (>= 6)
   selenium-webdriver
-  shopify_app (~> 14.0.0)
+  shopify_app!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
