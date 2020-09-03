@@ -1016,17 +1016,17 @@
     webpack-cli "^3.3.10"
     webpack-sources "^1.4.3"
 
-"@shopify/app-bridge-utils@^1.26.2":
-  version "1.26.2"
-  resolved "https://registry.yarnpkg.com/@shopify/app-bridge-utils/-/app-bridge-utils-1.26.2.tgz#e9f6862a0061b50cee597edb93a04144414c9edf"
-  integrity sha512-LONBtVmmTYHB14OwZOvxNLSnEoHiEnbRqGdFOU1g7qYY3xLkN2xqKw7+RTrDGSgAvcvNV/rNJra14XtqFE26DQ==
+"@shopify/app-bridge-utils@^1.27.0":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@shopify/app-bridge-utils/-/app-bridge-utils-1.27.0.tgz#49e1b4f71ad03fab949c5f4c0674d3c7062a2eca"
+  integrity sha512-OZxarvPA18avAY1UKCBcYkj/na2FE0iFdLFTcatYphNrM/P1hblNdez7hMqe28Lws9TQUb1m3NMBa/ynaw2lfg==
   dependencies:
-    "@shopify/app-bridge" "^1.26.2"
+    "@shopify/app-bridge" "^1.27.0"
 
-"@shopify/app-bridge@^1.26.2":
-  version "1.26.2"
-  resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-1.26.2.tgz#be6bee22afc32ec668606039e2bb501562da5ae7"
-  integrity sha512-T+KdIh6Tj6AfGUeG2k6hUcAYP2pw9safO/CduZ49CLK6AJxotjoblmS8geGst9lWSM8MZd7SQ5xtSme1CQM4+A==
+"@shopify/app-bridge@^1.27.0":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-1.27.0.tgz#9ae2831416322420c69b83a18d0378d1481f0518"
+  integrity sha512-U4gUTcpHWwXaoFowJRFOEM5bSG1X4gAUDcB9j7uXYjr9XfbSvD7p9MU8EAAXT7vFmcA8u5Euqli5omHU4X3dAA==
 
 "@shopify/polaris-icons@^3.10.0":
   version "3.12.0"
