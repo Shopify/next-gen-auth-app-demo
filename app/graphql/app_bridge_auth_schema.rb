@@ -1,4 +1,4 @@
-class NextGenAuthAppDemoSchema < GraphQL::Schema
+class AppBridgeAuthSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 

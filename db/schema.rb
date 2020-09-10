@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_141447) do
+ActiveRecord::Schema.define(version: 2020_08_20_234507) do
 
   create_table "shops", force: :cascade do |t|
     t.string "shopify_domain", null: false

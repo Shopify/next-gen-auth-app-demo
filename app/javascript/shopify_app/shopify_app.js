@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   var createApp = AppBridge.default;
   window.app = createApp({
     apiKey: data.apiKey,
-    shopOrigin: data.shopOrigin
+    shopOrigin: data.shopOrigin,
   });
 
   var actions = AppBridge.actions;
   var TitleBar = actions.TitleBar;
   TitleBar.create(app, {
-    title: data.page
+    title: data.page,
   });
 });
