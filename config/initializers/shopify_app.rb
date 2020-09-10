@@ -11,6 +11,7 @@ ShopifyApp.configure do |config|
   config.shop_session_repository = 'Shop'
    # TODO: document intent to fetch online access tokens
   config.user_session_repository = 'User'
+  config.actual_session_repository = 'Session'
   config.allow_jwt_authentication = true
 end
 
