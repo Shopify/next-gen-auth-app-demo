@@ -12,7 +12,7 @@ To run this app locally, you can clone this repository and do the following.
 
 ```
 SHOPIFY_API_KEY='YOUR API KEY FROM SHOPIFY PARTNERS DASHBOARD'
-SHOPIFY_API_SECRET_KEY='YOUR API SECRET KEY FROM SHOPIFY PARTNERS DASHBOARD'
+SHOPIFY_API_SECRET='YOUR API SECRET KEY FROM SHOPIFY PARTNERS DASHBOARD'
 ```
 
 > __Note:__ If you do not have a Shopify API Key or Shopify API Secret, see the following sections of the [Build a Shopify App with Node and React][2] guide:
