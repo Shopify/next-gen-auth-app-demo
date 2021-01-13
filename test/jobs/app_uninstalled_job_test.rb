@@ -1,6 +1,9 @@
 require 'test_helper'
+require 'helpers/shop_lifecycle_test_helper'
 
 class AppUninstalledJobTest < ActiveJob::TestCase
+  include ShopLifecycleTestHelper
+
   def setup
     @shop_1 = shops(:regular_shop)
     @shop_2 = shops(:second_shop)
@@ -11,16 +14,15 @@ class AppUninstalledJobTest < ActiveJob::TestCase
   end
 
   test "AppUninstalledJob marks the shop as uninstalled from the app" do
-    assert_difference 'Shop.count', -1 do
+    assert_uninstalls @shop_1.shopify_domain do
       job.perform(shop_domain: @shop_1.shopify_domain)
     end
 
-    assert_nil Shop.find_by(shopify_domain: @shop_1.shopify_domain)
-    assert_equal @shop_2, Shop.find_by(shopify_domain: @shop_2.shopify_domain)
+    assert_installed @shop_2.shopify_domain
   end
 
   test "AppUninstalledJob does nothing for non-existent shop" do
-    assert_difference 'Shop.count', 0 do
+    assert_no_installation_change do
       job.perform(shop_domain: 'example.myshopify.com')
     end
   end
