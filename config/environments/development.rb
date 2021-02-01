@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.hosts = (config.hosts rescue []) << /\w+\.ngrok\.io/
   config.hosts = (config.hosts rescue []) << /\h+.ngrok.io/
   # Settings specified here will take precedence over those in config/application.rb.
 

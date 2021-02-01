@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'shopify_app', '~> 14.0.0'
+gem 'shopify_app', path: '../shopify_app_private'
 gem 'dotenv-rails'
 gem 'react-rails'
 gem 'graphql'
