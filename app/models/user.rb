@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-class Shop < ActiveRecord::Base
-  include ShopifyApp::ShopSessionStorage
+class User < ActiveRecord::Base
+  include ShopifyApp::UserSessionStorage
 
   # Override access_scopes= to specify how access scopes are saved
   def access_scopes=(scopes)

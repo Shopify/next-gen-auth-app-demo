@@ -3,12 +3,19 @@ ShopifyApp.configure do |config|
   config.api_key = ENV['SHOPIFY_API_KEY']
   config.secret = ENV['SHOPIFY_API_SECRET']
   config.old_secret = ""
-  config.scope = "read_products, write_orders" # Consult this page for more scope options:
-                                 # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
+  #config.scope = "read_products"
+  config.scope = "write_products, write_orders, read_customers, write_content, write_themes, read_product_listings, read_script_tags, read_locations, write_shipping, read_checkouts, write_discounts, write_locales, write_inventory" # Consult this page for more scope options:
+  #config.scope = "write_themes, read_product_listings, read_script_tags, read_locations, write_shipping, read_checkouts, write_discounts, write_locales, write_inventory"
+  config.user_access_scopes = "write_products"
+  #config.scope = "read_products, read_orders"
+  #config.scope = "read_products, write_orders"
+  #config.scope = "write_orders"
+  #config.scope = "write_products, write_orders, read_customers, write_content, write_themes, read_product_listings, read_script_tags, read_locations, write_shipping, read_checkouts, write_discounts, write_locales, write_inventory"
   config.embedded_app = true
   config.after_authenticate_job = false
   config.api_version = "2020-07"
   config.shop_session_repository = 'Shop'
+  config.user_session_repository = 'User'
   config.allow_jwt_authentication = true
   config.webhooks = [
     {topic: 'app/uninstalled', address: "#{ENV['APP_URL']}/webhooks/app_uninstalled", format: 'json'},
