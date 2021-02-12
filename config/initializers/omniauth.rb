@@ -3,7 +3,12 @@
 Rails.application.config.middleware.use(OmniAuth::Builder) do
 
   def update_shop_scopes?(shop)
-    shop_access_scopes = ShopifyApp::SessionRepository.retrieve_shop_access_scopes(shop)
+    shop_access_scopes = begin
+     ShopifyApp::SessionRepository.retrieve_shop_access_scopes(shop)
+    rescue
+      nil
+    end
+
     configuration_scopes = ShopifyApp.configuration.shop_access_scopes
     ShopifyApp::ScopeUtilities.access_scopes_mismatch?(shop_access_scopes, configuration_scopes)
   end
