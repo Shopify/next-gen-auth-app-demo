@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.1'
 
-gem 'shopify_app', '~> 14.0.0'
+gem 'shopify_app', '~> 17.1.0'
 gem 'dotenv-rails'
 gem 'react-rails'
 gem 'graphql'
