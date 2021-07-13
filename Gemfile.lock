@@ -64,7 +64,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
-    addressable (2.7.0)
+    addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -153,7 +153,7 @@ GEM
     omniauth-shopify-oauth2 (2.2.3)
       activesupport
       omniauth-oauth2 (~> 1.5.0)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
