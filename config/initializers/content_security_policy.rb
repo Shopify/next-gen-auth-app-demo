@@ -12,7 +12,7 @@ def current_domain
     session[:shopify_domain]
 end
 
-frame_ancestors = lambda { [ current_domain, "admin.shopify.com" ] || initial_frame_ancestors }
+frame_ancestors = lambda { current_domain ? [ current_domain, "admin.shopify.com" ] : initial_frame_ancestors }
 
 Rails.application.config.content_security_policy do |policy|
   policy.default_src(:https, :self)
