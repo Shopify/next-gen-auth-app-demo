@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var createApp = AppBridge.default;
   window.app = createApp({
     apiKey: data.apiKey,
-    shopOrigin: data.shopOrigin,
+    host: data.shopOrigin,
   });
 
   var actions = AppBridge.actions;
