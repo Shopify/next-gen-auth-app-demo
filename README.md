@@ -1,3 +1,5 @@
+> **This repository is no longer maintained.** It has been archived and receives no updates or security fixes.
+
 # App Bridge Authentication
 
 A demo app created using Rails, React, and App Bridge for the Shopify tutorial [Build a Shopify app with Rails, React, and App Bridge](https://shopify.dev/tutorials/build-rails-react-app-that-uses-app-bridge-authentication).
